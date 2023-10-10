@@ -15,6 +15,13 @@ half_angle = 360 / 56 / 2;
 
 r_led = led_pitch / 2 / sin(half_angle);
 
+rr = sqrt(pow(r_led, 2) + pow(led_pitch / 2, 2));
+echo(rr);
+rotate([0, 0, half_angle])
+translate([rr, 0, 20])
+color("red")
+sphere(d = 3);
+
 module led() {
     color("white")
     translate([-2.5, -2.5, 0])
